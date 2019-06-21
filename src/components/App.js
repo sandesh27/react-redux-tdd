@@ -11,11 +11,6 @@ class App extends React.Component {
     console.log("Inside App render");
     return (
       <div>
-        {/* <CommentDetail
-          name="Sandy"
-          timeAgo="2 days ago"
-          comment="How artistic!"
-        /> */}
         <CommentDetail
           name="Elliot"
           timeAgo="Just now"
