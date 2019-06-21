@@ -32,10 +32,10 @@ const CommentDetail = ({ name, timeAgo, comment }) => {
             </a>
             <div className="content">
               <a href={hrefLink} className="author">
-                {name}
+                Jenny
               </a>
               <div className="metadata">
-                <span className="date">{timeAgo}</span>
+                <span className="date">2 mins ago</span>
               </div>
               <div className="text">{comment}</div>
               <div className="actions">

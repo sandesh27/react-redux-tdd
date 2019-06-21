@@ -17,7 +17,7 @@ class App extends React.Component {
           comment="How artistic!"
         /> */}
         <CommentDetail
-          name="Jenny"
+          name="Elliot"
           timeAgo="Just now"
           comment="Elliot you are always so right :)"
         />
