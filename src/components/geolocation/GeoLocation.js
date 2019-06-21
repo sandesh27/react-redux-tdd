@@ -9,7 +9,9 @@ class GeoLocation extends React.Component {
       latitude: null,
       longitude: null
     };
+  }
 
+  getLocationInfo() {
     window.navigator.geolocation.getCurrentPosition(
       position => {
         this.setState({
@@ -22,6 +24,24 @@ class GeoLocation extends React.Component {
       }
     );
   }
+
+  componentWillMount() {
+    this.getLocationInfo();
+    console.log("Inside GeoLocation => componentWillMount");
+  }
+
+  componentDidMount() {
+    console.log("Inside GeoLocation => componentDidMount");
+  }
+
+  componentWillUpdate() {
+    console.log("Inside GeoLocation => componentWillUpdate");
+  }
+
+  componentDidUpdate() {
+    console.log("Inside GeoLocation => componentDidUpdate");
+  }
+
   render() {
     console.log("Inside GeoLocation render");
     return (
