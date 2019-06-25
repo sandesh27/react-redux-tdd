@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./header/Header";
 import CommentDetail from "./comments/CommentDetail";
 import GeoLocation from "./geolocation/GeoLocation";
 import SearchBar from "./search/SearchBar";
@@ -14,24 +15,12 @@ class App extends React.Component {
     return (
       <div className="ui grid">
         <Router>
-          <div className="four wide column">
-            <div className="ui vertical fluid tabular menu">
-              <NavLink to="/comments" className="item">
-                Comments
-              </NavLink>
-              <NavLink to="/geolocation" className="item">
-                Geolocation
-              </NavLink>
-              <NavLink to="/images" className="item">
-                Images
-              </NavLink>
-            </div>
-          </div>
+          <Header />
           <div className="twelve wide stretched column">
             <div className="ui segment">
               <Route
                 exact
-                path="/comments"
+                path="/"
                 render={props => (
                   <CommentDetail
                     {...props}
