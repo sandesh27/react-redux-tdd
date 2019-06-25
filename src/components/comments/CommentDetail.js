@@ -36,7 +36,7 @@ const CommentDetail = ({ name, timeAgo, comment }) => {
               <div className="metadata">
                 <span className="date">2 mins ago</span>
               </div>
-              <div className="text">{comment}</div>
+              <div className="text">Elliot you are always so right :)</div>
               <div className="actions">
                 <a href={HREF_LINK} className="reply">
                   Reply
