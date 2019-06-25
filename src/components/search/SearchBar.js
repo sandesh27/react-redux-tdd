@@ -31,7 +31,8 @@ export default class SearchBar extends Component {
               photos: response.data.photos
             })
           : this.setState({
-              api_result: "blank"
+              api_result: "blank",
+              photos: []
             });
       })
       .catch(error => {
