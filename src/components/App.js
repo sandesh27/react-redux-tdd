@@ -1,6 +1,7 @@
 import React from "react";
 import CommentDetail from "./comments/CommentDetail";
 import GeoLocation from "./geolocation/GeoLocation";
+import SearchBar from "./search/SearchBar";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends React.Component {
           comment="Elliot you are always so right :)"
         />
         <GeoLocation />
+        <SearchBar />
       </div>
     );
   }
