@@ -1,19 +1,35 @@
 import React, { Component } from "react";
 import { HREF_LINK } from "../../constants";
+import ImageDetails from "./ImageDetails";
 
 export default class ImageItem extends Component {
+  showImage = imageId => {
+    console.log("imageId: ", imageId);
+    // this.props.history.push(`images/${imageId}`);
+    return <ImageDetails />;
+  };
+
   render() {
+    const { photo } = this.props;
     return (
       <div className="column">
-        <a href={HREF_LINK} className="ui tiny image">
-          <img alt="" src={this.props.photo.src.small} />
+        <a href={HREF_LINK} className="ui image">
+          <img alt="" src={photo.src.large} />
         </a>
         <div className="content">
           <a href={HREF_LINK} className="header">
-            {this.props.photo.photographer}
+            {photo.photographer}
           </a>
           <div className="description">
-            <p>{this.props.photo.id}</p>
+            <p>{photo.id}</p>
+            <div
+              className="ui button green"
+              onClick={() => {
+                this.showImage(photo.id);
+              }}
+            >
+              Show
+            </div>
           </div>
         </div>
       </div>

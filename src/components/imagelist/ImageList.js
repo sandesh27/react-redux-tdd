@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import ImageItem from "./ImageItem";
 import "./ImageList.css";
 
-export default class ImageList extends Component {
+class ImageList extends Component {
   showImages = () => {
     const imageItems = this.props.photos.map(photo => {
       return <ImageItem photo={photo} key={photo.id} />;
@@ -22,3 +23,5 @@ export default class ImageList extends Component {
     );
   }
 }
+
+export default withRouter(ImageList);
