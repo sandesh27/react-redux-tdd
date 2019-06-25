@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import CommentDetail from "./comments/CommentDetail";
 import GeoLocation from "./geolocation/GeoLocation";
 import SearchBar from "./search/SearchBar";
@@ -13,25 +13,22 @@ class App extends React.Component {
     console.log("Inside App render");
     return (
       <div className="ui grid">
-        <div className="four wide column">
-          <div className="ui vertical fluid tabular menu">
-            <a href="/" className="active item">
-              Home
-            </a>
-            <a href="/comments" className="item">
-              Comments
-            </a>
-            <a href="/geolocation" className="item">
-              Geolocation
-            </a>
-            <a href="/images" className="item">
-              Images
-            </a>
+        <Router>
+          <div className="four wide column">
+            <div className="ui vertical fluid tabular menu">
+              <NavLink to="/comments" className="item">
+                Comments
+              </NavLink>
+              <NavLink to="/geolocation" className="item">
+                Geolocation
+              </NavLink>
+              <NavLink to="/images" className="item">
+                Images
+              </NavLink>
+            </div>
           </div>
-        </div>
-        <div className="twelve wide stretched column">
-          <div className="ui segment">
-            <Router>
+          <div className="twelve wide stretched column">
+            <div className="ui segment">
               <Route
                 exact
                 path="/comments"
@@ -46,9 +43,9 @@ class App extends React.Component {
               />
               <Route exact path="/geolocation" component={GeoLocation} />
               <Route exact path="/images" component={SearchBar} />
-            </Router>
+            </div>
           </div>
-        </div>
+        </Router>
       </div>
     );
   }
