@@ -4,7 +4,7 @@ import { HREF_LINK } from "../../constants";
 export default class ImageItem extends Component {
   render() {
     return (
-      <div className="item">
+      <div className="column">
         <a href={HREF_LINK} className="ui tiny image">
           <img alt="" src={this.props.photo.src.small} />
         </a>

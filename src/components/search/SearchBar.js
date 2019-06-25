@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { getImageApiInstance } from "../../utils";
 import ImageList from "../imagelist/ImageList";
+import { PEXELS_PER_PAGE_IMAGES } from "../../constants";
+import "./SearchBar.css";
 
 export default class SearchBar extends Component {
   state = {
@@ -17,7 +19,7 @@ export default class SearchBar extends Component {
     const axiosInstance = getImageApiInstance();
     const searchQuery = `search?query=${
       this.state.searchQuery
-    }&per_page=15&page=1`;
+    }&per_page=${PEXELS_PER_PAGE_IMAGES}&page=1`;
 
     axiosInstance
       .get(searchQuery)

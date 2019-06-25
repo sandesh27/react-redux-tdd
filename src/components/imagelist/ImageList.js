@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ImageItem from "./ImageItem";
+import "./ImageList.css";
 
 export default class ImageList extends Component {
   showImages = () => {
@@ -10,6 +11,6 @@ export default class ImageList extends Component {
   };
 
   render() {
-    return <div className="ui items">{this.showImages()}</div>;
+    return <div className="ui five column grid">{this.showImages()}</div>;
   }
 }
