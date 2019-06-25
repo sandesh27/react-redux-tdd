@@ -7,6 +7,7 @@ import "./SearchBar.css";
 export default class SearchBar extends Component {
   state = {
     api_result: "",
+    searchQuery: "",
     photos: []
   };
 
@@ -53,6 +54,7 @@ export default class SearchBar extends Component {
             <input
               type="text"
               name="search"
+              value={this.state.searchQuery}
               placeholder="Search Image"
               onChange={this.updateSearchQuery}
             />
