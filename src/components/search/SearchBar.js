@@ -6,6 +6,7 @@ import "./SearchBar.css";
 
 export default class SearchBar extends Component {
   state = {
+    api_result: "",
     photos: []
   };
 
@@ -24,12 +25,20 @@ export default class SearchBar extends Component {
       .get(searchQuery)
       .then(response => {
         // handle success
-        this.setState({
-          photos: response.data.photos
-        });
+        response.data.photos.length > 0
+          ? this.setState({
+              api_result: "success",
+              photos: response.data.photos
+            })
+          : this.setState({
+              api_result: "blank"
+            });
       })
       .catch(error => {
         // handle error
+        this.setState({
+          api_result: "error"
+        });
         console.log(error);
       });
   };
@@ -55,7 +64,10 @@ export default class SearchBar extends Component {
             Submit
           </button>
         </form>
-        <ImageList photos={this.state.photos} />
+        <ImageList
+          photos={this.state.photos}
+          api_result={this.state.api_result}
+        />
       </div>
     );
   }

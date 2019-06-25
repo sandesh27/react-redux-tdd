@@ -11,6 +11,14 @@ export default class ImageList extends Component {
   };
 
   render() {
-    return <div className="ui five column grid">{this.showImages()}</div>;
+    return (
+      <div className="ui five column grid">
+        {this.props.api_result === "success"
+          ? this.showImages()
+          : this.props.api_result === "blank"
+          ? "No results found!!"
+          : ""}
+      </div>
+    );
   }
 }
